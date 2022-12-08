@@ -6,15 +6,15 @@ namespace csharp_11
     public class GenericMath
     {
 
-        private int AddAll(params int[] values)
+        private T AddAll<T>(params T[] values)
+            where T : INumber<T>
         {
-            int result = 0;
+            T result = T.Zero;
 
             foreach (var value in values)
             {
                 result += value;
             }
-
             return result;
         }
 
@@ -29,59 +29,13 @@ namespace csharp_11
         }
 
 
-        //[Fact]
-        //public void Sum_with_decimal()
-        //{
-        //    var values =  new[] { 1m, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-        //    var sum = AddAll(values.ToArray());
-
-        //    Assert.Equal(55, sum);
-        //}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        private T AddAll2<T>(params T[] values)
-            // Generic math version
-            where T : INumber<T>
-            // Explore INumber for crazy number of interfaces - like IAdditiveIdentity and IParseable
+        [Fact]
+        public void Sum_with_decimal()
         {
-            T result = T.Zero;
+            var values = new[] { 1m, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            var sum = AddAll(values.ToArray());
 
-            foreach (var value in values)
-            {
-                result += value;
-            }
-
-            return result;
+            Assert.Equal(55, sum);
         }
 
         private T AddAll3<T>(params T[] values)
