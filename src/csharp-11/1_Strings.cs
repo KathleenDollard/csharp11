@@ -32,7 +32,6 @@ namespace csharp_11
         [Fact]
         public void Interpolation_shortcut_10()
         {
-
             var to = "world";
             // Magic happens that shortcuts and does not call the slow method
             // As a result, side effects will not happen - no side effects
@@ -42,6 +41,8 @@ namespace csharp_11
             static string ImagineAsASlowMethod(string value) => value;
 
             static bool SomeTestAlmostAlwaysTrue() => true;
+            // This is an example of a feature that makes .NET better, although
+            // most devs will not use this gnarly feature
         }
 
         [Fact]

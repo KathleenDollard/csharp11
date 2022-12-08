@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+// This sample is based on https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/struct#struct-initialization-and-default-values
+
 namespace csharp_11
 {
     public class AutoDefaultStruct
@@ -12,7 +14,7 @@ namespace csharp_11
         {
             public Measurement(double value)
             {
-                Value = value;
+                Value = value;  // Previously had to assign Description
             }
 
             public Measurement(double value, string description)
@@ -37,7 +39,7 @@ namespace csharp_11
         [Fact]
         public void Instantiate_struct_11()
         {
-            var m1 = new Measurement(5);
+            var m1 = new Measurement(5); 
             var m2 = new Measurement();
             var m3 = default(Measurement);
 
