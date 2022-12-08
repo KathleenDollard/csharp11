@@ -56,7 +56,7 @@ namespace csharp_11
                                            "beta",
                                            "gamma",
                                            "delta",
-                                           "eplison",
+                                           "epsilon",
                                            "zeta",
                                            "eta",
                                            "theta")}";
